@@ -34,6 +34,15 @@ return {
     config = function()
       local lspconfig = require('lspconfig')
 
+      vim.diagnostic.config({
+        virtual_text   = true,
+        signs          = true,
+        update_in_insert = true,
+        underline      = true,
+        severity_sort  = true,
+        float = { source = 'always' },
+      })
+
       -- Function to setup LSP
       local on_attach = function(client, bufnr)
         -- Keymaps for LSP actions
